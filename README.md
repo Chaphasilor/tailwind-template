@@ -24,10 +24,15 @@ npx serve static
 
 **Tip**: You can also run `npm run watch` to have webpack automatically rebuild on file changes! (You still need to manually refresh the page served by `serve` though...)
 
-## Config
+## Working with the template
+
+- Place any static files (e.g. html, images) into the `static/` folder
+- Place any files you want to run through webpack into the `src/` folder **and import the files in `index.js`** (or inside another js file that is already imported in `index.js`).  
+  Check out how it's done with `test-dependency.js` :)
 
 ### Things to keep in mind
 
-- Don't put anything inside `static/webpack` as the folder is cleared on every build
-- If you change the output filenames inside the webpack config, you'll have to manually change them in `index.html`
-- If you add aditional html pages, remember to include the webpack bundle in each one!
+- Don't put anything inside `static/webpack/` as the folder is cleared on every build
+- If you add aditional html pages, remember to include the webpack bundle in each one!  
+  Just include `<script src="webpack/bundle.js"></script>` at the bottom of the html body
+- If you change the output filename(s) inside the webpack config, you'll have to manually change them in each webpack bundle import (see above)
