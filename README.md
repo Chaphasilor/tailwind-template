@@ -14,6 +14,8 @@ npm i
 npm run build
 ```
 
+*On Windows you might get a warning about the command `export` not being recognized. You can safely ignore it :)*
+
 3. Serve the files:
 
 ```
