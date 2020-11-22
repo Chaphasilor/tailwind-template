@@ -38,6 +38,7 @@ npx serve static
 - All additional colors from the [color palette reference](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) are **also** available. They can be accessed both in *lowercase* or *dromedarCase* for convenience (docs use dromedarCase, but I like my class names lowercase...).  
   *Keep in mind that some colors from the the color palette reference are aliased in the default palette ([take a look at this](https://github.com/tailwindlabs/tailwindcss/blob/3de0c48bd67f47c94f484bf7d92dc41e707e9abc/stubs/defaultConfig.stub.js#L15-L28)). So `amber` is actually the exact same as `yellow`. This shouldn't be an issue for you, just don't get a headache trying to figure out why a color isn't working ^^.*
 
+
 ### Things To Keep In Mind
 
 - Don't put anything inside `static/webpack/` as the folder is cleared on every build
