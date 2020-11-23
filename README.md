@@ -4,25 +4,27 @@
 
 1. Install all dependencies:
 
-```
-npm i
-```
+    ```shell
+    npm i
+    ```
 
-2. Build the project:
+2. Build the project **for development** and have it open in your default browser:
 
-```
-npm run build
-```
+    ```shell
+    npm run watch
+    ```
 
-*On Windows you might get a warning about the command `export` not being recognized. You can safely ignore it :)*
+   *On Windows you might get a warning about the command `export` not being recognized. You can safely ignore it.*
 
-3. Serve the files:
+   **Tip**: [Browsersync](https://browsersync.io/) is used to serve the project. It will automatically sync reloads, scroll events, form inputs and more between different tabs/browsers/clients. So you can open the URL displayed in the terminal on your phone to test both desktop and mobile layout at the same time!
 
-```
-npx serve static
-```
+3. Build the project **for production**:
 
-**Tip**: You can also run `npm run watch` to have webpack automatically rebuild on file changes! (You still need to manually refresh the page served by `serve` though...)
+   ```shell
+   npm run build
+   ```
+
+   This will minify your bundle and apply some additional optimizations through webpack. After building for production, you can simply copy the `static`-folder and upload it to your web server, etc.
 
 ## Working With The Template
 
@@ -32,16 +34,19 @@ npx serve static
 - Place any files you want to run through webpack into the `src/` folder **and import the files in `index.js`** (or inside another js file that is already imported in `index.js`).  
   Check out how it's done with `example-dependency.js` :)
 
-### Colors
+### Tailwind
+
+[TailwindCSS](https://tailwindcss.com/) is included out-of-the-box. A default config with minor additions is used. For more info, keep reading.
+
+#### Colors
 
 - All colors from the [default palette](https://tailwindcss.com/docs/customizing-colors) are available
 - All additional colors from the [color palette reference](https://tailwindcss.com/docs/customizing-colors#color-palette-reference) are **also** available. They can be accessed both in *lowercase* or *dromedarCase* for convenience (docs use dromedarCase, but I like my class names lowercase...).  
   *Keep in mind that some colors from the the color palette reference are aliased in the default palette ([take a look at this](https://github.com/tailwindlabs/tailwindcss/blob/3de0c48bd67f47c94f484bf7d92dc41e707e9abc/stubs/defaultConfig.stub.js#L15-L28)). So `amber` is actually the exact same as `yellow`. This shouldn't be an issue for you, just don't get a headache trying to figure out why a color isn't working ^^.*
 
-
 ### Things To Keep In Mind
 
 - Don't put anything inside `static/webpack/` as the folder is cleared on every build
 - If you add aditional html pages, remember to include the webpack bundle in each one!  
-  Just include `<script src="webpack/bundle.js"></script>` at the bottom of the html body
+  Just include `<script src="webpack/bundle.js"></script>` inside the head of the html body
 - If you change the output filename(s) inside the webpack config, you'll have to manually change them in each webpack bundle import (see above)

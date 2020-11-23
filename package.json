@@ -4,20 +4,19 @@
   "description": "A template for inlcuding TailwindCSS with basic html projects, using webpack",
   "private": true,
   "scripts": {
-    "sync": "browser-sync start --config browser-sync.config.js",
     "watch": "webpack --config webpack.config.js --mode=development --watch",
     "build": "export NODE_ENV=production || set NODE_ENV=production&&  webpack --config webpack.config.js --mode=production"
   },
   "author": "Chaphasilor",
   "license": "GPL-3.0",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "autoprefixer": "^10.0.1",
     "tailwindcss": "^2.0.1",
     "webpack": "^5.1.3",
-    "webpack-cli": "^4.1.0"
-  },
-  "devDependencies": {
+    "webpack-cli": "^4.1.0",
     "browser-sync": "^2.26.13",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
     "file-loader": "^6.1.1",
