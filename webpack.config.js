@@ -13,32 +13,32 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new BrowserSyncPlugin({
-    "ui": {
-      "port": 3001
-    },
-    "files": [
-        "./static/**/*.*",
-        // "./static/**/*.js",
-        // "./static/**/*.html",
-    ],
-    "watchEvents": [
-        "change",
-        "add",
-        "unlink", // delete
-        "addDir",
-        "unlinkDir",
-    ],
-    "server": {
-        baseDir: "static",
+      ui: {
+        port: 3001
+      },
+      files: [
+        `./static/**/*.*`,
+        // `./static/**/*.js`,
+        // `./static/**/*.html`,
+      ],
+      watchEvents: [
+        `change`,
+        `add`,
+        `unlink`, // delete
+        `addDir`,
+        `unlinkDir`,
+      ],
+      server: {
+        baseDir: `static`,
         directory: false,
-    },
-    "injectChanges": true,
-    "proxy": false, // in case another server should be used with browser-sync
-    "port": 3000,
-    "browser": "default",
-    "cors": true,
-    "notify": false, // disable browser-sync popup on reload
-    "minify": true,
+      },
+      injectChanges: true,
+      proxy: false, // in case another server should be used with browser-sync
+      port: 3000,
+      browser: `default`,
+      cors: true,
+      notify: false, // disable browser-sync popup on reload
+      minify: true,
     })
   ],
   module: {
@@ -64,6 +64,9 @@ module.exports = {
                 plugins: [
                   require('tailwindcss'),
                   require('autoprefixer'),
+                  require('cssnano')({
+                    preset: `default`,
+                  }),
                 ],
               },
             }

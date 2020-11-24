@@ -1,25 +1,19 @@
-const defaultColors = require(`tailwindcss/defaultTheme`).colors;
-const allColors = require(`tailwindcss/colors`);
-
-const extendedColors = defaultColors;
-
-Object.entries(allColors).forEach(([colorName, colors]) => {
-  extendedColors[colorName] = colors;
-  extendedColors[colorName.toLowerCase()] = colors; // tailwind classes should be all-lowercase, but the docs are using dromedarCase...
-});
-
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === "production", // set to true to force purging
     content: [
+      // scans your html files for tailwind classes and deletes any unused class definitions when building for production
+      // I can't think of any reason why you should change this
       './static/**/*.html',
     ],
   },
-  darkMode: 'media',
+  presets: [
+    // don't modify this preset if you don't know exactly what you're doing!
+    require(`./extended-colors.preset.js`),
+    // add your own presets below this line :)
+  ],
+  darkMode: `media`,
   theme: {
-    colors: defaultColors,
-    extend: {
-    },
+    extend: {},
   },
   variants: {},
   plugins: [],
