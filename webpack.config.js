@@ -4,9 +4,12 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: './src/index.js',
+  entry: {
+    tailwind: `./src/tailwind.js`,
+    index: `./src/index.js`,
+  },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'static/webpack'),
   },
   devtool: 'eval',
