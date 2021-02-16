@@ -4,7 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <script src="webpack/tailwind.bundle.js"></script>
+
     <title>TailwindCSS Template</title>
 
   </head>
@@ -22,7 +24,25 @@
 
     </div>
 
-    <script src="webpack/bundle.js"></script>
+    <!-- ONLY JAVASCRIPT SHOULD GO BELOW -->
+
+    <script src="webpack/index.bundle.js"></script>
+    
+    <script>
+
+      console.log(`foo():`, foo());
+      console.log(`window.foo():`, window.foo());
+      console.log(`baz:`, baz);
+      console.log(`window.baz:`, window.baz);
+      console.log(`
+%cNotice how the two variables are available on the window object. This is because they were assigned to it inside index.js.
+
+You only have to assign anything to the window object if you want to call it *from your html* (e.g. from a <script> tag like this one).
+
+Also note how document.title gets logged above. The code for this is in example-dependency.js. This shows that you can stil run code without assigning anything to the window object!
+      `, `color: orangered;`);
+      
+    </script>
 
   </body>
 </html>
