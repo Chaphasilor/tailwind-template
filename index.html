@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TailwindCSS Template</title>
+
+  </head>
+
+  <body
+    class="dark bg-gray-50 dark:bg-warmgray-800"
+  >
+
+    <div
+      class="p-4 text-center"
+    >
+  
+      <div class="p-2 font-bold text-teal-500 text-9xl">Tailwind</div>
+      <div class="inline-block py-2 text-6xl font-black text-transparent rounded-xl bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-amber-500 ring-4 ring-offset-4 ring-offset-gray-50 dark:ring-offset-warmgray-800 ring-indigo-500">is awesome!</div>
+
+    </div>
+
+    <!-- DON'T TOUCH THE LINE BELOW -->
+    <script type="module" src="./src/index.js"></script>
+    <!-- DON'T TOUCH THE LINE ABOVE -->
+
+    <!-- ONLY JAVASCRIPT SHOULD GO BELOW -->
+
+    <script>
+
+      window.onload = () => {
+        
+        console.log(`foo():`, foo());
+        console.log(`window.foo():`, window.foo());
+        console.log(`baz:`, baz);
+        console.log(`window.baz:`, window.baz);
+        console.log(`
+  %cNotice how the two variables are available on the window object. This is because they were assigned to it inside index.js.
+  
+  You only have to assign anything to the window object if you want to call it *from your html* (e.g. from a <script> tag like this one).
+  
+  Also note how document.title gets logged above. The code for this is in example-dependency.js. This shows that you can stil run code without assigning anything to the window object!
+        `, `color: orangered;`);
+
+      }
+
+      
+    </script>
+    
+  </body>
+</html>

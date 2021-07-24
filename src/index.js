@@ -1,5 +1,6 @@
-// import *any file or dependecy (module)* that you want to bundle here
+import './tailwind.css'; // import tailwind so that it gets bundled by vite
 
+// import *any file or dependency (module)* that you want to bundle here
 import './example-dependency';
 
 // regular javascript goes below
